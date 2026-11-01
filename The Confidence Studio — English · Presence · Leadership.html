@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Confidence Studio — English · Presence · Leadership</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f3ec;--bg2:#ebe6db;--card:#fbfaf6;--ink:#1b2a41;--mut:#5d6675;--gold:#b8924a;--line:#d9d3c5;--navy:#1b2a41;--on-navy:#f6f3ec;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121a28;--bg2:#18223a;--card:#17213a;--ink:#f1ede3;--mut:#a3abba;--line:#2b3750;--navy:#0b1220;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121a28;--bg2:#18223a;--card:#17213a;--ink:#f1ede3;--mut:#a3abba;--line:#2b3750;--navy:#0b1220;color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.7 Manrope,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.serif{font-family:"Cormorant Garamond",Georgia,serif;font-weight:400;line-height:1.08;letter-spacing:-.01em}
+em{font-style:italic;color:var(--gold)}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:auto;padding:0 28px}
+.eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:18px;display:block}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border-radius:99px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;transition:.3s;border:1px solid var(--ink);cursor:pointer;font-family:inherit}
+.btn.dark{background:var(--navy);color:#f6f3ec;border-color:var(--navy)}
+.btn.dark:hover{background:var(--gold);border-color:var(--gold);transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--bg)}
+nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+.logo{font-family:"Cormorant Garamond",serif;font-size:22px;line-height:1}
+.logo small{display:block;font:500 9px Manrope;letter-spacing:.24em;text-transform:uppercase;color:var(--mut);margin-top:6px}
+.links{display:flex;gap:30px;align-items:center;font-size:13px;color:var(--mut)}
+.links a:not(.btn):hover{color:var(--gold)}
+.links .btn{padding:12px 22px;font-size:11px;color:#f6f3ec}
+section{padding:110px 0}
+.hero{padding:90px 0 100px}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:center}
+h1{font-size:clamp(46px,6.4vw,88px);margin-bottom:28px}
+.lead{font-size:17px;color:var(--mut);max-width:520px;margin-bottom:36px}
+.cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px}
+.cred{font-size:12px;color:var(--mut);letter-spacing:.04em}
+.portrait{position:relative;aspect-ratio:4/5;border-radius:200px 200px 6px 6px;background:radial-gradient(120% 80% at 30% 15%,#d8c39a,transparent 60%),linear-gradient(160deg,#c9b186,#1b2a41 85%);overflow:hidden;display:grid;place-items:center}
+.portrait span{font:italic 400 min(30vw,230px)/1 "Cormorant Garamond",serif;color:rgba(246,243,236,.85)}
+.badge{position:absolute;left:-26px;bottom:34px;background:var(--card);border:1px solid var(--line);padding:16px 22px;font-size:12px;color:var(--mut);box-shadow:0 20px 40px -20px rgba(0,0,0,.3);max-width:200px}
+.badge b{display:block;font:400 26px "Cormorant Garamond",serif;color:var(--ink)}
+.pw{position:relative}
+.intro{max-width:720px;margin-bottom:56px}
+h2{font-size:clamp(36px,4.6vw,60px);margin-bottom:22px}
+.ba{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line)}
+.ba>div{padding:44px 44px 36px}
+.ba .after{background:var(--navy);color:#f6f3ec}
+.ba h3{font-size:30px;margin:6px 0 24px}
+.ba small{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--mut)}
+.after small{color:var(--gold)}
+.ba li{list-style:none;padding:14px 0 14px 34px;position:relative;font-size:14px;color:var(--mut);border-top:1px solid color-mix(in srgb,currentColor 12%,transparent)}
+.after li{color:#d9dde6}
+.ba li:before{content:"";position:absolute;left:0;top:28px;width:18px;height:1px;background:var(--mut)}
+.after li:before{background:#7fa889}
+.about{background:var(--bg2)}
+.about .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px;align-items:start}
+.photo{aspect-ratio:1/1.1;background:linear-gradient(150deg,#1b2a41,#3b4a66 60%,#b8924a);position:relative}
+.quote{position:absolute;left:24px;right:-30px;bottom:-34px;background:var(--card);border:1px solid var(--line);padding:22px 26px;font:italic 400 20px/1.35 "Cormorant Garamond",serif}
+.about p{color:var(--mut);margin-bottom:20px}
+.progs{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:var(--card);border:1px solid var(--line);padding:38px 32px;display:flex;flex-direction:column;transition:.35s}
+.card:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 30px 50px -30px rgba(27,42,65,.35)}
+.card h3{font-size:32px;margin-bottom:6px}
+.card .for{font-size:12px;color:var(--gold);letter-spacing:.08em;margin-bottom:20px}
+.card ul{margin-bottom:22px}
+.card li{list-style:none;font-size:14px;color:var(--mut);padding:5px 0 5px 20px;position:relative}
+.card li:before{content:"";position:absolute;left:0;top:15px;width:5px;height:5px;border-radius:50%;background:var(--gold)}
+.out{border-top:1px solid var(--line);padding-top:18px;margin-top:auto;font-size:13px;color:var(--mut)}
+.out b{display:block;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--mut);font-weight:500;margin-bottom:8px}
+.out p{color:var(--ink);font-weight:500;margin-bottom:8px}
+.card .enq{margin-top:22px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600}
+.card .enq:hover{color:var(--gold)}
+.stories{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);background:var(--card)}
+.stories blockquote{padding:44px 34px;border-right:1px solid var(--line);font-size:15px;color:var(--mut)}
+.stories blockquote:last-child{border:0}
+.stories blockquote:before{content:"“";display:block;font:400 56px/.6 "Cormorant Garamond",serif;color:var(--gold);margin-bottom:12px}
+.stories cite{display:block;margin-top:28px;font-style:normal;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
+.stories cite i{display:block;font-style:normal;color:var(--mut);letter-spacing:.04em;text-transform:none;font-size:12px;margin-top:2px}
+.contact{background:var(--bg2)}
+.contact .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px}
+dl{margin-top:36px;border-top:1px solid var(--line)}
+dl div{padding:16px 0;border-bottom:1px solid var(--line)}
+dt{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+dd{font-size:14px;color:var(--mut)}
+form{display:grid;gap:26px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--mut);display:block}
+input[type=text],input[type=email],input[type=tel],textarea{width:100%;background:none;border:0;border-bottom:1px solid var(--line);padding:10px 0;font:inherit;color:var(--ink);outline:0;transition:.3s}
+input:focus,textarea:focus{border-color:var(--gold)}
+.opt{display:flex;align-items:center;gap:12px;padding:13px 16px;border:1px solid var(--line);margin-top:8px;font-size:14px;letter-spacing:0;text-transform:none;color:var(--ink);cursor:pointer;transition:.25s}
+.opt:has(input:checked){background:var(--card);border-color:var(--ink)}
+.opt input{accent-color:var(--navy)}
+form .btn{justify-content:center;width:100%}
+.sent{display:none;padding:22px;border:1px solid var(--gold);font:italic 22px "Cormorant Garamond",serif}
+footer{background:var(--navy);color:#f6f3ec;padding:80px 0 34px}
+footer .wrap>div{display:grid;grid-template-columns:1.4fr .6fr .8fr;gap:60px;padding-bottom:50px;border-bottom:1px solid rgba(255,255,255,.12)}
+footer p,footer li{font-size:14px;color:#aab2c2}
+footer ul{padding:0}footer li{list-style:none;padding:6px 0}
+footer h4{font:500 10px Manrope;letter-spacing:.22em;text-transform:uppercase;color:#aab2c2;margin-bottom:16px}
+footer .logo{margin-bottom:18px;font-size:26px}
+footer .btn{background:var(--gold);border-color:var(--gold);color:#1b2a41;margin-top:22px}
+.fine{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:26px;font-size:11px;color:#8a93a5;letter-spacing:.04em}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .9s,transform .9s}
+.rv.in{opacity:1;transform:none}
+.view{display:none}.view.on{display:block;animation:pg .7s both}@keyframes pg{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.links a.act{color:var(--gold)}
+details{border-top:1px solid var(--line);padding:22px 0}details:last-child{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;font:400 26px "Cormorant Garamond",serif;list-style:none;display:flex;justify-content:space-between;gap:20px}summary::after{content:"+";color:var(--gold)}details[open] summary::after{content:"–"}details p{color:var(--mut);margin-top:12px;max-width:680px}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+@media(max-width:900px){
+.links a:not(.btn){display:none}
+.hero .wrap,.about .wrap,.contact .wrap,.progs,.stories,.ba,footer .wrap>div,.row{grid-template-columns:1fr}
+.hero .wrap,.about .wrap,.contact .wrap{gap:50px}
+section{padding:76px 0}.badge{left:12px}.quote{right:12px}
+.stories blockquote{border-right:0;border-bottom:1px solid var(--line)}
+.ba>div{padding:32px 24px}
+}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+<a href="#home" class="logo">The Confidence Studio<small>English · Presence · Leadership</small></a>
+<div class="links"><a href="#programs">Programs</a><a href="#about">About</a><a href="#method">Method</a><a href="#stories">Stories</a><a href="#faq">FAQ</a><a class="btn dark" href="#begin">Book a session</a></div>
+</div></nav>
+
+<header class="hero view" data-v="home"><div class="wrap">
+<div class="rv">
+<span class="eyebrow">Communication &amp; personality coaching</span>
+<h1>Speak English with the quiet confidence of <em>presence.</em></h1>
+<p class="lead">From the classroom to the boardroom, hesitation becomes high-impact communication. Bespoke coaching for students from Grade 6 upwards and for professionals ready to be heard — taught live, in small groups, by a trainer with fifteen years inside real workplaces.</p>
+<div class="cta"><a class="btn dark" href="#begin">Book a free diagnostic →</a><a class="btn ghost" href="#programs">Explore programs</a></div>
+<p class="cred">15+ years in L&amp;D · TESOL Certified, Open CPD London · MBA (HR)</p>
+</div>
+<div class="pw rv"><div class="portrait"><span>C</span></div><div class="badge"><b>30 min</b>A free, no-obligation diagnostic conversation on where you are.</div></div>
+</div></header>
+<section class="view" data-v="home" style="background:var(--bg2)"><div class="wrap"><div class="intro"><span class="eyebrow">Explore</span><h2>Find your <em>way in.</em></h2></div><div class="progs">
+<a class="card" href="#method"><h3>The method</h3><p style="color:var(--mut);font-size:14px">Why intelligent people stay quiet — and how a room that lets you practise changes it.</p><span class="enq">Read more ↗</span></a>
+<a class="card" href="#programs"><h3>Programs</h3><p style="color:var(--mut);font-size:14px">Youth Fluency, Campus to Corporate and Executive English, built around real moments.</p><span class="enq">View programs ↗</span></a>
+<a class="card" href="#about"><h3>About</h3><p style="color:var(--mut);font-size:14px">Fifteen years inside the machinery of workplaces, now teaching presence.</p><span class="enq">Meet your trainer ↗</span></a>
+</div></div></section>
+
+<section class="view" data-v="method"><div class="wrap">
+<div class="intro rv"><span class="eyebrow">The gap</span><h2>You were never short of intelligence. You were short of a <em>room</em> that let you practise.</h2>
+<p class="lead">Somewhere between the classroom and the conference room, most of us learned to stay quiet — not because we had nothing to say, but because no one ever taught us how to say it without fear.</p></div>
+<div class="ba rv">
+<div><small>Before</small><h3>The hesitation</h3><ul>
+<li>The answer is clear in your head. It disappears the moment you are asked to say it out loud.</li>
+<li>You read every grammar rule, then translate each sentence before you dare speak it.</li>
+<li>Your child recites the poem perfectly at home — and forgets all of it at the school assembly.</li>
+<li>You open every meeting with “Sorry, I just wanted to add…”</li></ul></div>
+<div class="after"><small>After</small><h3>The presence</h3><ul>
+<li>You speak in full sentences, at your own pace, without translating in your head.</li>
+<li>You open with a point instead of an apology.</li>
+<li>Your child raises a hand in class — and volunteers the next time, too.</li>
+<li>You walk into interviews, reviews and difficult conversations with structure, calm and warmth.</li></ul></div>
+</div></div></section>
+
+<section class="about view" data-v="about"><div class="wrap">
+<div class="rv" style="padding-bottom:40px"><div class="photo"><div class="quote">“Confidence is not a personality you are born with. It is a practised behaviour.”</div></div></div>
+<div class="rv"><span class="eyebrow">About</span><h2>Fifteen years inside the machinery of <em>workplaces.</em></h2>
+<p>I have spent fifteen years inside the machinery of workplaces — hiring, training, and watching people with excellent minds get passed over for rooms they were more than ready to enter.</p>
+<p>As an L&amp;D professional and HR practitioner, I have sat on the interviewing side of the table more times than I can count. I have seen candidates with outstanding credentials lose to a confident colleague, and quiet colleagues disappear from promotion lists simply because no one in the room knew how they thought.</p>
+<p>My own path ran through an MBA in Human Resources and fifteen years of corporate training, and then through a TESOL certification from Open CPD, London — because I wanted the pedagogy to match the instinct. I never learned to teach language the way it was taught to me: memorise, repeat, fear the red pen.</p>
+<p>So the method is different. We speak from the first session. We make mistakes on purpose, because the fastest route to fluency is a room where a mistake costs nothing. We rehearse the real thing — the interview, the assembly, the boardroom update — until your body remembers it as habit.</p></div>
+</div></section>
+
+<section class="view" data-v="programs"><div class="wrap">
+<div class="intro rv"><span class="eyebrow">Programs</span><h2>Three paths. One <em>destination.</em></h2><p class="lead">Live, small-group cohorts, each built around the moments that matter most at your stage.</p></div>
+<div class="progs">
+<article class="card rv"><h3>Youth Fluency &amp; Leadership</h3><div class="for">Students · Grades 6–12</div><ul><li>Grammar taught inside real conversation</li><li>Pronunciation and vocabulary that stay</li><li>Public speaking, debate and presentation</li><li>Body language, eye contact and voice</li><li>Group discussion and active listening</li><li>Creative expression and storytelling</li></ul><div class="out"><b>Outcome</b><p>Speaks up in class, assemblies and competitions — and can hold a thought under pressure.</p>Live cohort of 6 · Two sessions weekly · 12 weeks · Written progress notes for parents</div><a class="enq" href="#begin">Enquire about this programme ↗</a></article>
+<article class="card rv"><h3>Campus to Corporate</h3><div class="for">Graduates · Job seekers</div><ul><li>The 60-second self introduction</li><li>STAR-method answers to interview questions</li><li>Group discussion and case rounds</li><li>Professional etiquette and networking</li><li>Résumé and LinkedIn language</li><li>Mock interviews with recorded feedback</li></ul><div class="out"><b>Outcomes</b><p>Walks into an interview able to explain their own value clearly — and handles the follow-up question.</p>Live cohort of 6 · Two sessions weekly · 8 weeks · Full mock interview panel in the final fortnight</div><a class="enq" href="#begin">Enquire about this programme ↗</a></article>
+<article class="card rv"><h3>Executive English</h3><div class="for">Working professionals</div><ul><li>Meeting articulation and polite interruption</li><li>Presentation structure and delivery</li><li>Executive presence and body language</li><li>Email and written communication tone</li><li>Stakeholder and client conversations</li><li>Impromptu speaking under pressure</li></ul><div class="out"><b>Outcome</b><p>Leads the meeting, holds the room, and writes the email that ends the thread.</p>One-to-one or groups of 4 · 10 sessions · Session recordings for self-review</div><a class="enq" href="#begin">Enquire about this programme ↗</a></article>
+</div></div></section>
+
+<section class="view" data-v="stories"><div class="wrap">
+<div class="intro rv"><span class="eyebrow">Stories</span><h2>What changes, in their <em>words.</em></h2><p class="lead">Sample stories, written to show the shape of the transformation — replace them with your own learners’ words before you publish.</p></div>
+<div class="stories rv">
+<blockquote>She used to rehearse her answers at the dinner table and then say “nothing” in class. Six months later she stood for the school election and asked for the microphone.<cite>Parent of a Grade 8 learner<i>Youth Fluency &amp; Leadership</i></cite></blockquote>
+<blockquote>I had two offers and still froze in every interview. We recorded eleven mock interviews. In the twelfth — the real one — I heard my own voice and it sounded like someone who belonged there.<cite>Final-year student<i>Campus-to-Corporate · now an analyst</i></cite></blockquote>
+<blockquote>I was the person who sent the follow-up email instead of speaking in the meeting. Now I open the meeting. My director noticed before I told her I had started classes.<cite>Senior manager<i>Executive English · 9 years’ experience</i></cite></blockquote>
+</div></div></section>
+
+<section class="contact view" data-v="begin"><div class="wrap">
+<div class="rv"><span class="eyebrow">Begin</span><h2>Two hundred words are enough to change a <em>room.</em></h2>
+<p class="lead">Tell me a little about you — or about the young person you are asking on behalf of. I reply personally within one working day with an honest answer on whether I am the right fit, and a first month would look like.</p>
+<dl><div><dt>The diagnostic</dt><dd>30 minutes, one-to-one, at no cost</dd></div><div><dt>Availability</dt><dd>Monday to Saturday · 9 am – 8 pm IST</dd></div><div><dt>Where</dt><dd>Live online, worldwide · in person by arrangement</dd></div></dl></div>
+<form class="rv" id="f" onsubmit="event.preventDefault();this.style.display='none';document.getElementById('ok').style.display='block'">
+<div class="row"><label>Your name<input type="text" placeholder="Aditi Sharma" required></label><label>Email<input type="email" placeholder="you@example.com" required></label></div>
+<label>Phone (optional)<input type="tel" placeholder="+91"></label>
+<div><label>This enquiry is for</label>
+<label class="opt"><input type="radio" name="w" checked> A student (Grade 6–12)</label>
+<label class="opt"><input type="radio" name="w"> A graduate / job seeker</label>
+<label class="opt"><input type="radio" name="w"> A working professional</label></div>
+<label>What would you like to work on?<textarea rows="2" placeholder="Interview nerves, speaking up in class, presentations at work…"></textarea></label>
+<button class="btn dark" type="submit">Request my free session</button></form>
+<div class="sent" id="ok">Thank you — I will reply personally within one working day.</div>
+</div></section>
+
+<section class="view" data-v="faq"><div class="wrap"><div class="intro rv"><span class="eyebrow">FAQ</span><h2>Questions, <em>answered.</em></h2></div><div class="rv" style="max-width:820px">
+<details open><summary>Who are the classes for?</summary><p>Students from Grade 6 to 12, graduates and job seekers, and working professionals — each with their own program.</p></details>
+<details><summary>How big are the groups?</summary><p>Live cohorts of six, or groups of four for Executive English. One-to-one sessions are also available.</p></details>
+<details><summary>What happens in the free diagnostic?</summary><p>A 30-minute one-to-one conversation to see where you are today and what a first month would look like. No cost, no obligation.</p></details>
+<details><summary>Are sessions online?</summary><p>Yes, live online worldwide, with in-person sessions by arrangement.</p></details>
+<details><summary>Will parents get updates?</summary><p>Yes. Youth programs include written progress notes for parents.</p></details>
+<a class="btn dark" href="#begin" style="margin-top:36px">Book a free diagnostic →</a></div></div></section>
+<footer><div class="wrap">
+<div><div><a class="logo" href="#home">The Confidence Studio</a><p>Communication and personality coaching for students from Grade 6 upwards and for professionals who are ready to be heard. Live, small-group, deliberately human.</p><a class="btn" href="#begin">Book a free diagnostic →</a></div>
+<div><h4>Explore</h4><ul><li><a href="#programs">Programs</a></li><li><a href="#about">About</a></li><li><a href="#method">Method</a></li><li><a href="#stories">Stories</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+<div><h4>Studio hours</h4><ul><li>Monday – Saturday</li><li>9:00 am – 8:00 pm IST</li><li>Live online, worldwide</li><li>Replies within one working day</li></ul></div></div>
+<div class="fine"><span>© 2026 The Confidence Studio. All rights reserved.</span><span>MBA (HR) · TESOL Certified, Open CPD London · 15+ years in L&amp;D</span></div>
+</div></footer>
+<script>
+try{const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});document.querySelectorAll('.rv').forEach(el=>io.observe(el))}catch(e){document.querySelectorAll('.rv').forEach(el=>el.classList.add('in'))}
+const V=['home','method','about','programs','stories','begin','faq'];
+function go(){let h=location.hash.slice(1);if(!V.includes(h))h='home';document.querySelectorAll('.view').forEach(v=>v.classList.toggle('on',v.dataset.v===h));document.querySelectorAll('.links a:not(.btn)').forEach(a=>a.classList.toggle('act',a.getAttribute('href')==='#'+h));scrollTo(0,0);setTimeout(()=>document.querySelectorAll('.view.on .rv').forEach(e=>e.classList.add('in')),60)}
+addEventListener('hashchange',go);go();
+</script>
+</body>
+</html>
