@@ -112,7 +112,15 @@ details{border-top:1px solid var(--line);padding:22px 0}details:last-child{borde
 summary{cursor:pointer;font:400 26px "Cormorant Garamond",serif;list-style:none;display:flex;justify-content:space-between;gap:20px}summary::after{content:"+";color:var(--gold)}details[open] summary::after{content:"–"}details p{color:var(--mut);margin-top:12px;max-width:680px}
 @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 @media(max-width:900px){
-.links a:not(.btn){display:none}
+.burger{display:flex;width:44px;height:44px;border:1px solid var(--line);border-radius:50%;background:none;cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:5px;padding:0}
+.burger i{display:block;width:18px;height:1.5px;background:var(--ink);transition:.3s}
+.burger[aria-expanded=true] i:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.burger[aria-expanded=true] i:nth-child(2){opacity:0}
+.burger[aria-expanded=true] i:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--bg);border-bottom:1px solid var(--line);padding:8px 28px 26px;box-shadow:0 30px 40px -30px rgba(0,0,0,.3)}
+.links.open{display:flex}
+.links a:not(.btn){padding:16px 0;border-bottom:1px solid var(--line);font:400 24px "Cormorant Garamond",serif;color:var(--ink)}
+.links .btn{margin-top:20px;justify-content:center;padding:16px}
 .hero .wrap,.about .wrap,.contact .wrap,.progs,.stories,.ba,footer .wrap>div,.row{grid-template-columns:1fr}
 .hero .wrap,.about .wrap,.contact .wrap{gap:50px}
 section{padding:76px 0}.badge{left:12px}.quote{right:12px}
@@ -121,12 +129,26 @@ section{padding:76px 0}.badge{left:12px}.quote{right:12px}
 }
 .portrait,.photo{background:var(--founder) center 18%/cover no-repeat}.portrait span{display:none}
 .cl a{border-bottom:1px solid var(--line);transition:.3s}.cl a:hover{color:var(--gold);border-color:var(--gold)}footer li a:hover{color:var(--gold)}
+.burger{display:none}
+@media(max-width:900px){.burger{display:flex}}
+@media(max-width:600px){
+.wrap{padding:0 20px}.links{padding:8px 20px 24px}
+nav .wrap{height:68px}.logo{font-size:19px}.logo small{font-size:8px;letter-spacing:.18em}
+.hero{padding:40px 0 60px}section{padding:60px 0}
+h1{font-size:44px}.lead{font-size:16px}
+.cta .btn{width:100%;justify-content:center}
+.portrait{border-radius:160px 160px 6px 6px}.badge{left:10px;bottom:16px;padding:12px 16px}
+.card{padding:30px 24px}.stories blockquote{padding:32px 24px}
+.quote{font-size:18px;padding:18px 20px}
+details summary{font-size:22px}
+footer .wrap>div{gap:36px}.fine{flex-direction:column;gap:8px}
+}
 </style>
 </head>
 <body>
 <nav><div class="wrap">
 <a href="#home" class="logo">Skill Vanse<small>English · Presence · Leadership</small></a>
-<div class="links"><a href="#programs">Programs</a><a href="#about">About</a><a href="#method">Method</a><a href="#stories">Stories</a><a href="#faq">FAQ</a><a class="btn dark" href="#begin">Book a session</a></div>
+<div class="links"><a href="#programs">Programs</a><a href="#about">About</a><a href="#method">Method</a><a href="#stories">Stories</a><a href="#faq">FAQ</a><a class="btn dark" href="#begin">Book a session</a></div><button class="burger" aria-label="Menu" aria-expanded="false" id="bg"><i></i><i></i><i></i></button>
 </div></nav>
 
 <header class="hero view" data-v="home"><div class="wrap">
@@ -219,8 +241,11 @@ section{padding:76px 0}.badge{left:12px}.quote{right:12px}
 try{const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});document.querySelectorAll('.rv').forEach(el=>io.observe(el))}catch(e){document.querySelectorAll('.rv').forEach(el=>el.classList.add('in'))}
 const V=['home','method','about','programs','stories','begin','faq'];
 function go(){let h=location.hash.slice(1);if(!V.includes(h))h='home';document.querySelectorAll('.view').forEach(v=>v.classList.toggle('on',v.dataset.v===h));document.querySelectorAll('.links a:not(.btn)').forEach(a=>a.classList.toggle('act',a.getAttribute('href')==='#'+h));scrollTo(0,0);setTimeout(()=>document.querySelectorAll('.view.on .rv').forEach(e=>e.classList.add('in')),60)}
-addEventListener('hashchange',go);go();
+const bg=document.getElementById('bg'),lk=document.querySelector('.links');
+function cm(){lk.classList.remove('open');bg.setAttribute('aria-expanded','false')}
+bg.onclick=()=>{const o=lk.classList.toggle('open');bg.setAttribute('aria-expanded',o)};
+lk.addEventListener('click',e=>{if(e.target.closest('a'))cm()});
+addEventListener('hashchange',()=>{cm();go()});addEventListener('resize',()=>{if(innerWidth>900)cm()});go();
 </script>
 </body>
 </html>
-
